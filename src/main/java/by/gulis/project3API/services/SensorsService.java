@@ -29,7 +29,7 @@ public class SensorsService {
 
     public Boolean findByName(String name){
         if(sensorsRepository.findByName(name).isEmpty())
-            return true;
-        else return false;
+            return false;
+        else return true;
     }
 }

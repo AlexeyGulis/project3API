@@ -21,4 +21,8 @@ public class MeasurementsService {
     public List<Measurement> findAll(){
         return measurementsRepository.findAll();
     }
+
+    public void save(Measurement measurement){
+        measurementsRepository.save(measurement);
+    }
 }

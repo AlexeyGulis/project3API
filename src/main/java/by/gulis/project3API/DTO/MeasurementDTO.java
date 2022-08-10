@@ -14,7 +14,7 @@ public class MeasurementDTO {
     @Column(name = "raining")
     @NotEmpty(message = "Имя не должно быть пустым")
     private Boolean raining;
-    private SensorDTO sensorDTO;
+    private SensorDTO sensor;
 
     public Double getValue() {
         return value;
@@ -32,11 +32,11 @@ public class MeasurementDTO {
         this.raining = raining;
     }
 
-    public SensorDTO getSensorDTO() {
-        return sensorDTO;
+    public SensorDTO getSensor() {
+        return sensor;
     }
 
-    public void setSensorDTO(SensorDTO sensorDTO) {
-        this.sensorDTO = sensorDTO;
+    public void setSensor(SensorDTO sensor) {
+        this.sensor = sensor;
     }
 }
