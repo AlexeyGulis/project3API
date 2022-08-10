@@ -21,4 +21,44 @@ public class Measurement {
     @ManyToOne
     @JoinColumn(name = "sensor_id", referencedColumnName = "id")
     private Sensor owner;
+
+    public Measurement() {
+    }
+
+    public Measurement(Double value, Boolean raining) {
+        this.value = value;
+        this.raining = raining;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Double getValue() {
+        return value;
+    }
+
+    public void setValue(Double value) {
+        this.value = value;
+    }
+
+    public Boolean getRaining() {
+        return raining;
+    }
+
+    public void setRaining(Boolean raining) {
+        this.raining = raining;
+    }
+
+    public Sensor getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Sensor owner) {
+        this.owner = owner;
+    }
 }
