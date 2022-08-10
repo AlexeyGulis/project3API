@@ -1,7 +1,18 @@
 package by.gulis.project3API.DTO;
 
+import javax.persistence.Column;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+
 public class MeasurementDTO {
+    @Column(name = "value")
+    @Min(value = -100)
+    @Max(value = 100)
+    @NotEmpty
     private Double value;
+    @Column(name = "raining")
+    @NotEmpty
     private Boolean raining;
     private SensorDTO sensorDTO;
 
