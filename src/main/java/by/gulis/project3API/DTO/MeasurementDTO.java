@@ -7,12 +7,12 @@ import javax.validation.constraints.NotEmpty;
 
 public class MeasurementDTO {
     @Column(name = "value")
-    @Min(value = -100)
-    @Max(value = 100)
-    @NotEmpty
+    @Min(value = -100, message = "Значение value должно быть между -100 и 100")
+    @Max(value = 100, message = "Значение value должно быть между -100 и 100")
+    @NotEmpty(message = "Имя не должно быть пустым")
     private Double value;
     @Column(name = "raining")
-    @NotEmpty
+    @NotEmpty(message = "Имя не должно быть пустым")
     private Boolean raining;
     private SensorDTO sensorDTO;
 

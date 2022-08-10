@@ -14,12 +14,12 @@ public class Measurement {
     @Column(name = "id")
     private int id;
     @Column(name = "value")
-    @Min(value = -100)
-    @Max(value = 100)
-    @NotEmpty
+    @Min(value = -100, message = "Значение value должно быть между -100 и 100")
+    @Max(value = 100, message = "Значение value должно быть между -100 и 100")
+    @NotEmpty(message = "Имя не должно быть пустым")
     private Double value;
     @Column(name = "raining")
-    @NotEmpty
+    @NotEmpty(message = "Имя не должно быть пустым")
     private Boolean raining;
     @ManyToOne
     @JoinColumn(name = "sensor_id", referencedColumnName = "id")

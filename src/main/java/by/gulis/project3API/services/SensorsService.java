@@ -21,4 +21,15 @@ public class SensorsService {
     public List<Sensor> findAll(){
         return sensorsRepository.findAll();
     }
+
+    @Transactional
+    public void save(Sensor sensor){
+        sensorsRepository.save(sensor);
+    }
+
+    public Boolean findByName(String name){
+        if(sensorsRepository.findByName(name).isEmpty())
+            return true;
+        else return false;
+    }
 }

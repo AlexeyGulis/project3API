@@ -1,6 +1,7 @@
 package by.gulis.project3API.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class Sensor {
     @Column(name = "name")
     @Size(min = 2, max = 30,
             message = "Название сенсора должно быть длиной от 2 до 30 символов")
+    @NotEmpty(message = "Имя не должно быть пустым")
     private String name;
 
     @OneToMany(mappedBy = "owner")
