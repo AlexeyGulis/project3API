@@ -23,6 +23,11 @@ public class MeasurementsService {
         return measurementsRepository.findAll();
     }
 
+    public Integer countRainingDays(){
+        List<Measurement> measurementList = measurementsRepository.findByRainingEquals(true);
+        return measurementList.size();
+    }
+
     @Transactional
     public void save(Measurement measurement){
         enrichMethod(measurement);

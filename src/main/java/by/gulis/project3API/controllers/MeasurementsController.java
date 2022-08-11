@@ -47,6 +47,11 @@ public class MeasurementsController {
         return measurementsService.findAll().stream().map(this::convertToMeasurementDTO).collect(Collectors.toList());
     }
 
+    @GetMapping("/rainyDaysCount")
+    public Integer showRainyDaysCount(){
+        return measurementsService.countRainingDays();
+    }
+
     @PostMapping("/add")
     public ResponseEntity<HttpStatus> addMeasurement(@RequestBody @Valid MeasurementDTO measurementDTO, BindingResult bindingResult){
         validator.validate(measurementDTO.getSensor(),bindingResult);
