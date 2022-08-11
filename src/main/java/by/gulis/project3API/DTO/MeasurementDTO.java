@@ -1,16 +1,18 @@
 package by.gulis.project3API.DTO;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import org.springframework.beans.factory.annotation.Value;
+
+import javax.validation.constraints.*;
 
 public class MeasurementDTO {
 
-    @Min(value = -100, message = "Значение value должно быть между -100 и 100")
-    @Max(value = 100, message = "Значение value должно быть между -100 и 100")
+    @DecimalMax(value = "100.0", message = "Значение value должно быть между -100 и 100")
+    @DecimalMin(value = "-100.0" , message = "Значение value должно быть между -100 и 100")
+    @NotNull(message = "Значение value не должно быть null")
     private Double value;
-    @NotNull(message = "Значение raining не должно быть пустым")
+    @NotNull(message = "Значение raining не должно быть null")
     private Boolean raining;
+    @NotNull(message = "Значение sensor не должно быть null")
     private SensorDTO sensor;
 
     public Double getValue() {

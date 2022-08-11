@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 
 public class SensorDTO {
 
-    @NotEmpty(message = "Имя не должно быть пустым")
+    @NotEmpty(message = "Имя сенсора не должно быть пустым")
     @Size(min = 2, max = 30,
             message = "Название сенсора должно быть длиной от 2 до 30 символов")
     private String name;

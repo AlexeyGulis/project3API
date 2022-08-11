@@ -24,8 +24,11 @@ public class MeasurementDTOValidator implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         SensorDTO sensorDTO = (SensorDTO) target;
+        if(sensorDTO == null){
+            return;
+        }
         if(!sensorsService.findByName(sensorDTO.getName())){
-            errors.rejectValue("name","","Сенсора с таким названием не существует");
+            errors.rejectValue("sensor","","Сенсора с таким названием не существует");
         }
     }
 }
