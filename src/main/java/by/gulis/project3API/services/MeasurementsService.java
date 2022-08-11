@@ -22,6 +22,7 @@ public class MeasurementsService {
         return measurementsRepository.findAll();
     }
 
+    @Transactional
     public void save(Measurement measurement){
         measurementsRepository.save(measurement);
     }

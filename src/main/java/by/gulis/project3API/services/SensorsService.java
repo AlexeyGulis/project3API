@@ -32,4 +32,7 @@ public class SensorsService {
             return false;
         else return true;
     }
+    public Integer findByNameAndGetId(String name){
+           return sensorsRepository.findByName(name).get(0).getId();
+    }
 }

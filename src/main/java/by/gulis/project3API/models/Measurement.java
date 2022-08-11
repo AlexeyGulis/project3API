@@ -4,7 +4,7 @@ package by.gulis.project3API.models;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Measurement")
@@ -16,10 +16,9 @@ public class Measurement {
     @Column(name = "value")
     @Min(value = -100, message = "Значение value должно быть между -100 и 100")
     @Max(value = 100, message = "Значение value должно быть между -100 и 100")
-    @NotEmpty(message = "Имя не должно быть пустым")
     private Double value;
     @Column(name = "raining")
-    @NotEmpty(message = "Имя не должно быть пустым")
+    @NotNull(message = "Значение raining не должно быть пустым")
     private Boolean raining;
     @ManyToOne
     @JoinColumn(name = "sensor_id", referencedColumnName = "id")

@@ -79,6 +79,7 @@ public class MeasurementsController {
     private Measurement convertToMeasurement(MeasurementDTO measurementDTO){
         Measurement measurement = modelMapper.map(measurementDTO, Measurement.class);
         measurement.setOwner(convertToSensor(measurementDTO.getSensor()));
+        measurement.getOwner().setId(sensorsService.findByNameAndGetId(measurementDTO.getSensor().getName()));
         return measurement;
     }
     private SensorDTO convertToSensorDTO(Sensor sensor){
